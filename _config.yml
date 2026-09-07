@@ -263,8 +263,8 @@ terser:
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Jíra, Jira]
+  first_name: [Tomáš, Tomas, T.]
 
   style: apa
   locale: en

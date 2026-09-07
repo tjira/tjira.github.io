@@ -1,9 +1,7 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"JCTC":
+  url: https://pubs.acs.org/journal/jctcce
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
+"JQSRT":
+  url: https://www.sciencedirect.com/journal/journal-of-quantitative-spectroscopy-and-radiative-transfer
   color: "#009f36"
