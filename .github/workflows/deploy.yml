@@ -26,6 +26,9 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Install ImageMagick
+        run: sudo apt update && sudo apt install imagemagick -y
+
       - name: Configure the Pages
         id: pages
         uses: actions/configure-pages@v5
