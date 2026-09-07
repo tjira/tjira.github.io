@@ -20,33 +20,26 @@ jobs:
 
     steps:
       - name: Checkout the Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Install ImageMagick
+        run: sudo apt update && sudo apt install imagemagick -y
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install RenderCV
-        run: pip install rendercv[full]
-
-      - name: Create the 'assets/pdf' Directory
-        run: mkdir -p assets/pdf
-
-      - name: Render CV
-        run: rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
-
-      - name: Rename the Rendered CV
-        run: cp assets/rendercv/rendercv_output/*.pdf assets/pdf/tomas_jira_cv.pdf
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.4"
-          bundler-cache: true
 
-      - name: Install ImageMagick
-        run: sudo apt update && sudo apt install imagemagick -y
+      - name: Install RenderCV
+        run: pip install rendercv[full]
+
+      - name: Render CV
+        run: rendercv render _data/cv.yml --pdf-path ../assets/pdf/tomas_jira_cv.pdf --settings assets/rendercv/settings.yaml --typst-path ../assets/typ/tomas_jira_cv.typ
 
       - name: Configure the Pages
         id: pages
