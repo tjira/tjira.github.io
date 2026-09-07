@@ -12,6 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -19,7 +20,39 @@ jobs:
 
     steps:
       - name: Checkout the Repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install RenderCV
+        run: pip install rendercv[full]
+
+      - name: Render CV
+        run: |
+          cv_file=$(find _data -maxdepth 1 -type f \( -name "cv.yaml" -o -name "cv.yml" \))
+          if [ -z "$cv_file" ]; then
+            echo "No cv.yml file found!"
+            exit 1
+          fi
+          rendercv_dir=$(find assets -maxdepth 1 -type d -name "rendercv")
+          if [ -z "$rendercv_dir" ]; then
+            echo "No RenderCV config directory found!"
+            exit 1
+          fi
+          settings=$(find "$rendercv_dir" -maxdepth 1 -type f \( -name "settings.yaml" -o -name "settings.yml" \))
+          if [ -z "$settings" ]; then
+            echo "Missing RenderCV config file!"
+            exit 1
+          fi
+          mkdir -p assets/rendercv/rendercv_output assets/pdf
+          rendercv render "$cv_file" --settings "$settings"
+          pdf_output=$(find assets/rendercv/rendercv_output -maxdepth 1 -type f -name "*.pdf" | head -n 1)
+          if [ -n "$pdf_output" ]; then
+            cp "$pdf_output" assets/pdf/tomas_jira_cv.pdf
+          fi
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -32,13 +65,13 @@ jobs:
 
       - name: Configure the Pages
         id: pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: Build the Site
         run: JEKYLL_ENV=production && bundle exec jekyll build --baseurl "${{ steps.pages.base_path }}"
 
       - name: Upload the Site Artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
@@ -48,8 +81,9 @@ jobs:
 
     environment:
       url: ${{ steps.deployment.outputs.page_url }}
-      name: docs
+      name: github-pages
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v5
+        id: deployment
+        uses: actions/deploy-pages@v4
