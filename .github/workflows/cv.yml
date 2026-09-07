@@ -48,6 +48,11 @@ jobs:
           fi
           rendercv render "$cv_file" --settings "$settings"
           rm -f assets/rendercv/rendercv_output/*.typ
+          pdf_output=$(find assets/rendercv/rendercv_output -maxdepth 1 -type f -name "*.pdf" | head -n 1)
+          if [ -n "$pdf_output" ]; then
+            mkdir -p assets/pdf
+            cp "$pdf_output" assets/pdf/tomas_jira_cv.pdf
+          fi
 
       - name: Upload CV as an Artifact
         uses: actions/upload-artifact@v4
