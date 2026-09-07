@@ -3,26 +3,19 @@ layout: about
 title: About
 permalink: /
 subtitle: Ph.D. in Computational Photodynamics.
-
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info: >
-    <p>Technická 5, 160 00</p>
-    <p>Prague 6, Czech Republic</p>
-
 selected_papers: true
 social: true
-
 announcements:
   enabled: false
-
 latest_posts:
   enabled: false
 ---
 
-Welcome to my academic portfolio. I am a theoretical chemist who recently completed my Ph.D. within the Computational Photodynamics research group at the University of Chemistry and Technology, Prague (UCTP). My academic background is heavily rooted in mathematics and data science, which naturally shapes my approach to chemical physics and theoretical research.
+Welcome to my academic portfolio. I am a theoretical chemist who recently completed my Ph.D. within the Computational Photodynamics research group at the University of Chemistry and Technology, Prague (UCT). My academic background is heavily rooted in mathematics and data science, which naturally shapes my approach to chemical physics and theoretical research.
 
 My primary scientific interests lie at the intersection of quantum dynamics, electronic structure theory, and mixed quantum-classical dynamics. Rather than focusing strictly on applied problems, I am fascinated by the underlying conceptual and mathematical foundations of these fields. I am particularly interested in how we understand coupled electron-nuclear motion, the time evolution of quantum mechanics, and the application of variational principles to complex systems.
 
