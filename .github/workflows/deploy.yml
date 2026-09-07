@@ -34,6 +34,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.4"
+          bundler-cache: true
 
       - name: Install RenderCV
         run: pip install rendercv[full]
@@ -46,7 +47,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build the Site
-        run: JEKYLL_ENV=production && bundle exec jekyll build --baseurl "${{ steps.pages.base_path }}"
+        run: JEKYLL_ENV=production && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
 
       - name: Upload the Site Artifact
         uses: actions/upload-pages-artifact@v3
