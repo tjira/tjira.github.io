@@ -4,20 +4,11 @@
 
 title: blank
 first_name: Tomáš
-middle_name:
 last_name: Jíra
-contact_note:
-description:
-footer_text:
 keywords: quantum-chemistry, electronic-structure, quantum-mechanics, computational-chemistry, density-functional-theory, quantum-computing, quantum-information, quantum-algorithms, quantum-simulation
 lang: en
 icon: ⚛️
-apple_touch_icon:
 url: https://tjira.github.io
-baseurl:
-last_updated: false
-impressum_path:
-back_to_top: false
 
 # -----------------------------------------------------------------------------
 # Theme
@@ -25,14 +16,7 @@ back_to_top: false
 
 repo_theme_light: default
 repo_theme_dark: dark
-protect_email: false
-repo_trophies:
-  enabled: false
-  theme_light: flat
-  theme_dark: gitdimmed
-external_services:
-  github_readme_stats_url: https://github-stats-extended.vercel.app
-  github_profile_trophy_url: https://github-profile-trophy.vercel.app
+
 
 # -----------------------------------------------------------------------------
 # al-folio API (v1.x)
@@ -65,42 +49,14 @@ al_folio:
     auto_apply_safe_fixes: false
 
 # -----------------------------------------------------------------------------
-# RSS Feed
-# -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
 footer_fixed: true
 search_enabled: false
-socials_in_search: false
-posts_in_search: false
-bib_search: false
 max_width: 930px
 
-# -----------------------------------------------------------------------------
-# Open Graph & Schema.org
-# -----------------------------------------------------------------------------
-
-serve_og_meta: false
-serve_schema_org: false
-og_image:
-
-# -----------------------------------------------------------------------------
-# Analytics and search engine verification
-# -----------------------------------------------------------------------------
-
-analytics:
-  google:
-  cronitor:
-  pirsch:
-  openpanel:
-  cloudflare:
-enable_simple_analytics: false
-google_site_verification:
-bing_site_verification:
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -305,18 +261,13 @@ lazy_loading_images: true
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_verification: false
-enable_bing_verification: false
-enable_cookie_consent: false
 enable_masonry: true
 enable_math: true
-enable_tooltips: false
 enable_darkmode: true
-enable_navbar_social: false
 enable_project_categories: true
 enable_medium_zoom: true
 enable_progressbar: true
-enable_video_embedding: false
+
 
 # -----------------------------------------------------------------------------
 # Library versions
