@@ -30,29 +30,14 @@ jobs:
       - name: Install RenderCV
         run: pip install rendercv[full]
 
+      - name: Create the 'assets/pdf' Directory
+        run: mkdir -p assets/pdf
+
       - name: Render CV
-        run: |
-          cv_file=$(find _data -maxdepth 1 -type f \( -name "cv.yaml" -o -name "cv.yml" \))
-          if [ -z "$cv_file" ]; then
-            echo "No cv.yml file found!"
-            exit 1
-          fi
-          rendercv_dir=$(find assets -maxdepth 1 -type d -name "rendercv")
-          if [ -z "$rendercv_dir" ]; then
-            echo "No RenderCV config directory found!"
-            exit 1
-          fi
-          settings=$(find "$rendercv_dir" -maxdepth 1 -type f \( -name "settings.yaml" -o -name "settings.yml" \))
-          if [ -z "$settings" ]; then
-            echo "Missing RenderCV config file!"
-            exit 1
-          fi
-          mkdir -p assets/rendercv/rendercv_output assets/pdf
-          rendercv render "$cv_file" --settings "$settings"
-          pdf_output=$(find assets/rendercv/rendercv_output -maxdepth 1 -type f -name "*.pdf" | head -n 1)
-          if [ -n "$pdf_output" ]; then
-            cp "$pdf_output" assets/pdf/tomas_jira_cv.pdf
-          fi
+        run: rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
+
+      - name: Rename the Rendered CV
+        run: cp assets/rendercv/rendercv_output/*.pdf assets/pdf/tomas_jira_cv.pdf
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
