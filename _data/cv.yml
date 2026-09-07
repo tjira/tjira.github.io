@@ -18,22 +18,28 @@ cv:
         end_date: 2026
         location: Prague, Czech Republic
         highlights:
-          - "**Supervisor:** Prof. Petr Slavíček"
           - "**Dissertation:** *Computational Strategies for Nonadiabatic Molecular Dynamics*"
+          - "**Supervisor:** Prof. Petr Slavíček"
 
       - institution: University of Chemistry and Technology, Prague
         area: Physical Chemistry
-        degree: Ing.
+        degree: M.Sc.
         start_date: 2020
         end_date: 2022
         location: Prague, Czech Republic
+        highlights:
+          - "**Thesis:** *Simulation and Data Analysis of Emission Lab Round Robin Tests*"
+          - "**Supervisor:** Dr. Pavel Kříž"
 
       - institution: University of Chemistry and Technology, Prague
         area: Chemical Engineering
-        degree: Bc.
+        degree: B.Sc.
         start_date: 2017
         end_date: 2020
         location: Prague, Czech Republic
+        highlights:
+          - "**Thesis:** *Analysis of the Data from the Electron Microscope using Stochastic Model*"
+          - "**Supervisor:** Dr. Markéta Zikmundová"
 
     Experience:
       - company: University of Chemistry and Technology, Prague
@@ -42,25 +48,27 @@ cv:
         end_date: present
         location: Prague, Czech Republic
         highlights:
-          - Research activities in the field of theoretical chemistry and photodynamics.
-          - Teaching undergraduate mathematics courses.
+          - "Performed nonadiabatic molecular dynamics using ABIN, Bagel, Molpro and ORCA."
+          - "Implemented custom software for quantum dynamics and electronic structure methods."
+          - "Taught undergraduate mathematics courses."
 
-      - company: Christian-Albrechts-Universität zu Kiel
-        position: Research Internship (Kiel group)
+      - company:  Christian-Albrechts University of Kiel
+        position: Research Internship
         start_date: 2026-06
         end_date: 2026-06
         location: Kiel, Germany
         highlights:
-          - Group of Theoretical Spectroscopy and Heterogeneous Catalysis for solids, surfaces and condensed systems.
-          - "**Supervisor:** Prof. Anna Hehn"
+          - "Implemented spin-diabatic surface hopping for spin-orbit transitions in Newton-X."
+          - "Performed CP2K solid-state pyrazine simulations under Prof. Anna Hehn."
+          - "Collaborated within the Group of Theoretical Spectroscopy and Heterogeneous Catalysis."
 
-    Publications:
-      - title: "Wavepacket dynamics and quantum scattering in spin-orbit induced excitation and quenching in N⁺(³P)–He(¹S) and N⁺(¹D)–He(¹S) collisions"
+    Selected Publications:
+      - title: "Wavepacket Dynamics and Quantum Scattering in Spin-Orbit Induced Excitation"
         authors:
-          - M. Buchowiecki
           - T. Jíra
-          - L. Aissaoui
           - Å. Larson
+          - L. Aissaoui
+          - M. Buchowiecki
         journal: Physical Review A
         date: 2026
         doi: 10.1103/mgff-cjs8
@@ -76,16 +84,7 @@ cv:
         doi: 10.1021/acs.jctc.5c01176
         url: https://doi.org/10.1021/acs.jctc.5c01176
 
-      - title: "Spin–orbit induced charge transfer in H⁺/D⁺/T⁺ – N(⁴S) collisions"
-        authors:
-          - M. Buchowiecki
-          - T. Jíra
-        journal: Journal of Quantitative Spectroscopy and Radiative Transfer
-        date: 2025
-        doi: 10.1016/j.jqsrt.2025.109697
-        url: https://doi.org/10.1016/j.jqsrt.2025.109697
-
-      - title: "Sensitivity Analysis in Photodynamics: How Does the Electronic Structure Control *cis*-Stilbene Photodynamics?"
+      - title: "Sensitivity Analysis in *cis*-Stilbene Photodynamics"
         authors:
           - T. Jíra
           - J. Janoš
@@ -95,7 +94,17 @@ cv:
         doi: 10.1021/acs.jctc.4c01008
         url: https://doi.org/10.1021/acs.jctc.4c01008
 
-    Projects:
+    Skills:
+      - label: "Programming Languages"
+        details: "C++, C, Zig, Python, Julia, Rust"
+      - label: "Scientific Software"
+        details: "ORCA, Molpro, Gaussian, ABIN, Newton-X, CP2K, Libint2, LibXC, FFTW3, OpenBLAS"
+      - label: "Systems & Environments"
+        details: "Arch Linux, HPC Clusters, LaTeX, Neovim"
+      - label: "Languages"
+        details: "Czech (Native), English (Fluent)"
+
+    Software:
       - name: Zinq
         url: https://github.com/tjira/zinq
-        summary: Code for quantum dynamics, mixed quantum-classical dynamics, and electronic structure methods.
+        summary: "Open-source software for quantum dynamics and electronic structure methods."

@@ -40,14 +40,14 @@ jobs:
         run: pip install rendercv[full]
 
       - name: Render CV
-        run: rendercv render _data/cv.yml --pdf-path ../assets/pdf/tomas_jira_cv.pdf --settings assets/rendercv/settings.yaml --typst-path ../assets/typ/tomas_jira_cv.typ
+        run: rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
 
       - name: Configure the Pages
         id: pages
         uses: actions/configure-pages@v5
 
       - name: Build the Site
-        run: JEKYLL_ENV=production && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: JEKYLL_ENV=production && bundle exec jekyll build
 
       - name: Upload the Site Artifact
         uses: actions/upload-pages-artifact@v3

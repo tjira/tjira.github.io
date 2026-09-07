@@ -2,6 +2,10 @@
 /.bundle/
 /vendor/
 
+/assets/pdf/
+/assets/png/
+/assets/html/
+/assets/typ/
+/assets/md/
+
 *.lock
-*.pdf
-*.typ
