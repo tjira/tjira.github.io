@@ -2,29 +2,29 @@ name: Render a CV
 on:
   push:
     branches:
-      - main
       - master
-    paths:
-      - "_data/cv.yml"
-      - "assets/rendercv/design.yaml"
-      - "assets/rendercv/locale.yaml"
-      - "assets/rendercv/settings.yaml"
   workflow_call:
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   rendercv:
-    name: RenderCV
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout the Repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Install RenderCV
-        run: |
-          pip install rendercv[full]
+        run: pip install rendercv[full]
+
       - name: RenderCV
         run: |
           cv_file=$(find _data  -maxdepth 1 -type f \( -name "cv.yaml" -o -name "cv.yml" \))
@@ -44,11 +44,13 @@ jobs:
           fi
           rendercv render $cv_file --settings $settings
           rm assets/rendercv/rendercv_output/*.typ
-      - name: Upload rendercv_output as an artifact
+
+      - name: Upload CV as an Artifact
         uses: actions/upload-artifact@v4
         with:
           name: RenderCV Output
           path: assets/rendercv/rendercv_output
+
       - name: Push the changes
         run: |
           git config --global user.name "${{ github.actor }}"
