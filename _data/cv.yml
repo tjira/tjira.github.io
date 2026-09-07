@@ -55,6 +55,17 @@ cv:
           - "**Supervisor:** Prof. Anna Hehn"
 
     Publications:
+      - title: "Wavepacket dynamics and quantum scattering in spin-orbit induced excitation and quenching in N⁺(³P)–He(¹S) and N⁺(¹D)–He(¹S) collisions"
+        authors:
+          - M. Buchowiecki
+          - T. Jíra
+          - L. Aissaoui
+          - Å. Larson
+        journal: Physical Review A
+        date: 2026
+        doi: 10.1103/mgff-cjs8
+        url: https://doi.org/10.1103/mgff-cjs8
+
       - title: Critical Assessment of Curvature-Driven Surface Hopping Algorithms
         authors:
           - T. Jíra
