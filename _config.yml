@@ -86,9 +86,6 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
-keep_files:
-  - CNAME
-  - .nojekyll
 theme: al_folio_core
 plugins:
   - jekyll-3rd-party-libraries
