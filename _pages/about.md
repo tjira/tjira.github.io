@@ -5,7 +5,7 @@ permalink: /
 subtitle: Ph.D. in Computational Photodynamics.
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_picture_1.jpg
   image_circular: false
 selected_papers: true
 social: true
