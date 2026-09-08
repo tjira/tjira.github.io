@@ -33,6 +33,8 @@ This philosophy drives my daily research. I approach theoretical chemistry with 
 
 Currently, I channel this technical focus into the active development of Zinq, an open-source quantum dynamics package designed from the ground up. Alongside my research and code development, I maintain a strong interest in scientific pedagogy and teaching the next generation of computational chemists. I am always looking to connect over new computational strategies, open-source scientific tools, or future research opportunities.
 
+---
+
 <style>
   .post article h2 a {
     text-transform: capitalize;
