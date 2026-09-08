@@ -45,16 +45,7 @@ jobs:
       - name: Generate Publications PDF
         uses: xu-cheng/texlive-action@v3
         with:
-          run: |
-            mkdir -p assets/pdf
-            cd assets/tex
-            sed -e '/^---/d' -e 's/<em>/\\textit{/g' -e 's/<\/em>/}/g' ../../_bibliography/papers.bib > papers.bib
-            pdflatex -interaction=nonstopmode jira_publications.tex
-            biber jira_publications
-            pdflatex -interaction=nonstopmode jira_publications.tex
-            pdflatex -interaction=nonstopmode jira_publications.tex
-            cp jira_publications.pdf ../pdf/jira_publications.pdf
-            cd ../..
+          run: cd assets/tex && arara jira_publications.tex
 
       - name: Configure the Pages
         id: pages

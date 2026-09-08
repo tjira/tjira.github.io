@@ -1,5 +1,6 @@
-/_site/
 /.bundle/
+/_site/
+/build/
 /vendor/
 
 /assets/pdf/
@@ -10,12 +11,3 @@
 /assets/json/
 
 *.lock
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.log
-*.out
-*.run.xml
-assets/tex/papers.bib
-

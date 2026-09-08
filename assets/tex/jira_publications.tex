@@ -1,13 +1,18 @@
+% arara: mkdir: {target: "../../build"}
+% arara: lualatex: {options: ["--output-directory=../../build"]}
+% arara: biber: {options: ["--output-directory=../../build"]}
+% arara: lualatex: {options: ["--output-directory=../../build"]}
+% arara: lualatex: {options: ["--output-directory=../../build"]}
+% arara: mkdir: {target: "../pdf"}
+% arara: move: {files: ["../../build/jira_publications.pdf"], target: "../pdf/jira_publications.pdf"}
 \documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[margin=1in]{geometry}
-\usepackage{microtype}
-\usepackage{xcolor}
+\usepackage[backend=biber,doi=true,sorting=ydnt,style=chem-acs]{biblatex}
+\usepackage[margin=2cm]{geometry}
+\usepackage{hyperref}
 \usepackage{newunicodechar}
 
-% Superscripts and special Unicode character definitions
+\title{\LARGE\textbf{List of Publications}}\author{\large\textbf{Tomáš Jíra, Ph.D.}}
+
 \newunicodechar{⁺}{\textsuperscript{+}}
 \newunicodechar{⁻}{\textsuperscript{-}}
 \newunicodechar{⁰}{\textsuperscript{0}}
@@ -20,44 +25,22 @@
 \newunicodechar{⁷}{\textsuperscript{7}}
 \newunicodechar{⁸}{\textsuperscript{8}}
 \newunicodechar{⁹}{\textsuperscript{9}}
+
 \newunicodechar{–}{--}
 \newunicodechar{—}{---}
 
-% BibLaTeX configuration
-\usepackage[
-    backend=biber,
-    style=numeric,
-    sorting=ydnt,
-    maxbibnames=99,
-    giveninits=true,
-    doi=true,
-    url=true,
-    isbn=false,
-    eprint=false
-]{biblatex}
+\addbibresource{../../_bibliography/papers.bib}
 
-\addbibresource{papers.bib}
-
-% Hyperlink configuration
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue!70!black,
-    citecolor=blue!70!black,
-    urlcolor=blue!70!black,
-    pdftitle={List of Publications - Tomáš Jíra, Ph.D.},
-    pdfauthor={Tomáš Jíra, Ph.D.}
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=title,match=\regexp{\x{3C}em\x{3E}(.*?)\x{3C}/em\x{3E}},replace=\regexp{\\textit\{$1\}}]
+    }
+  }
 }
 
-\title{\LARGE \textbf{List of Publications}}
-\author{\large \textbf{Tomáš Jíra, Ph.D.}}
-\date{\small Last updated: \today}
+\hypersetup{colorlinks=true,pdftitle={List of Publications},pdfauthor={Tomáš Jíra, Ph.D.},urlcolor=blue}
 
 \begin{document}
-
-\maketitle
-
-\nocite{*}
-\printbibliography[heading=none]
-
+\maketitle\nocite{*}\printbibliography[heading=none]
 \end{document}
