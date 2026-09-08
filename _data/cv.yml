@@ -62,7 +62,7 @@ cv:
           - "Performed CP2K solid-state pyrazine simulations under Prof. Anna Hehn."
           - "Collaborated within the Group of Theoretical Spectroscopy and Heterogeneous Catalysis."
 
-    Selected Publications:
+    Publications:
       - title: "Wavepacket Dynamics and Quantum Scattering in Spin-Orbit Induced Excitation"
         authors:
           - T. Jíra
@@ -94,7 +94,7 @@ cv:
         doi: 10.1021/acs.jctc.4c01008
         url: https://doi.org/10.1021/acs.jctc.4c01008
 
-    Skills:
+    Technical Skills:
       - label: "Programming Languages"
         details: "C++, C, Zig, Python, Julia, Rust"
       - label: "Scientific Software"
@@ -104,7 +104,7 @@ cv:
       - label: "Languages"
         details: "Czech (Native), English (Fluent)"
 
-    Software:
+    Projects:
       - name: Zinq
         url: https://github.com/tjira/zinq
         summary: "Open-source software for quantum dynamics and electronic structure methods."
