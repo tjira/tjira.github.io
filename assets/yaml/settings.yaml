@@ -1,7 +1,7 @@
 settings:
   render_command:
-    design: ../assets/rendercv/design.yaml
-    locale: ../assets/rendercv/locale.yaml
+    design: ../assets/yaml/design.yaml
+    locale: ../assets/yaml/locale.yaml
     typst_path: ../assets/typ/NAME_IN_SNAKE_CASE_CV.typ
     pdf_path: ../assets/pdf/NAME_IN_SNAKE_CASE_CV.pdf
     markdown_path: ../assets/md/NAME_IN_SNAKE_CASE_CV.md

@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{newunicodechar}
+
+% Superscripts and special Unicode character definitions
+\newunicodechar{⁺}{\textsuperscript{+}}
+\newunicodechar{⁻}{\textsuperscript{-}}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+\newunicodechar{–}{--}
+\newunicodechar{—}{---}
+
+% BibLaTeX configuration
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ydnt,
+    maxbibnames=99,
+    giveninits=true,
+    doi=true,
+    url=true,
+    isbn=false,
+    eprint=false
+]{biblatex}
+
+\addbibresource{papers.bib}
+
+% Hyperlink configuration
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black,
+    pdftitle={List of Publications - Tomáš Jíra, Ph.D.},
+    pdfauthor={Tomáš Jíra, Ph.D.}
+}
+
+\title{\LARGE \textbf{List of Publications}}
+\author{\large \textbf{Tomáš Jíra, Ph.D.}}
+\date{\small Last updated: \today}
+
+\begin{document}
+
+\maketitle
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\end{document}

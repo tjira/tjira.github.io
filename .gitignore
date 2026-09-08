@@ -7,5 +7,15 @@
 /assets/html/
 /assets/typ/
 /assets/md/
+/assets/json/
 
 *.lock
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+assets/tex/papers.bib
+

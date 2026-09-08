@@ -40,7 +40,21 @@ jobs:
         run: pip install rendercv[full]
 
       - name: Render CV
-        run: rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml
+        run: rendercv render _data/cv.yml --settings assets/yaml/settings.yaml
+
+      - name: Generate Publications PDF
+        uses: xu-cheng/texlive-action@v3
+        with:
+          run: |
+            mkdir -p assets/pdf
+            cd assets/tex
+            sed -e '/^---/d' -e 's/<em>/\\textit{/g' -e 's/<\/em>/}/g' ../../_bibliography/papers.bib > papers.bib
+            pdflatex -interaction=nonstopmode jira_publications.tex
+            biber jira_publications
+            pdflatex -interaction=nonstopmode jira_publications.tex
+            pdflatex -interaction=nonstopmode jira_publications.tex
+            cp jira_publications.pdf ../pdf/jira_publications.pdf
+            cd ../..
 
       - name: Configure the Pages
         id: pages
