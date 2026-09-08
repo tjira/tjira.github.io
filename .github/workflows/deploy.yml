@@ -40,7 +40,7 @@ jobs:
         run: pip install rendercv[full]
 
       - name: Render CV
-        run: rendercv render _data/cv.yml --settings assets/yaml/settings.yaml
+        run: rendercv render _data/cv.yml --settings assets/yaml/rendercv_settings.yaml
 
       - name: Generate Publications PDF
         uses: xu-cheng/texlive-action@v3
