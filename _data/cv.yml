@@ -62,38 +62,6 @@ cv:
           - "Performed CP2K solid-state pyrazine simulations under Prof. Anna Hehn."
           - "Collaborated within the Group of Theoretical Spectroscopy and Heterogeneous Catalysis."
 
-    Publications:
-      - title: "Wavepacket Dynamics and Quantum Scattering in Spin-Orbit Induced Excitation"
-        authors:
-          - T. Jíra
-          - Å. Larson
-          - L. Aissaoui
-          - M. Buchowiecki
-        journal: Physical Review A
-        date: 2026
-        doi: 10.1103/mgff-cjs8
-        url: https://doi.org/10.1103/mgff-cjs8
-
-      - title: Critical Assessment of Curvature-Driven Surface Hopping Algorithms
-        authors:
-          - T. Jíra
-          - J. Janoš
-          - P. Slavíček
-        journal: Journal of Chemical Theory and Computation
-        date: 2025
-        doi: 10.1021/acs.jctc.5c01176
-        url: https://doi.org/10.1021/acs.jctc.5c01176
-
-      - title: "Sensitivity Analysis in *cis*-Stilbene Photodynamics"
-        authors:
-          - T. Jíra
-          - J. Janoš
-          - P. Slavíček
-        journal: Journal of Chemical Theory and Computation
-        date: 2024
-        doi: 10.1021/acs.jctc.4c01008
-        url: https://doi.org/10.1021/acs.jctc.4c01008
-
     Technical Skills:
       - label: "Programming Languages"
         details: "C++, C, Zig, Python, Julia, Rust"
